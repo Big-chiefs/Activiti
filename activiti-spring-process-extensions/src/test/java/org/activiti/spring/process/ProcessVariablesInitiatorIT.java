@@ -59,9 +59,7 @@ public class ProcessVariablesInitiatorIT {
     @MockBean
     private ProcessExtensionService processExtensionService;
 
-    @MockBean
-    private RepositoryService repositoryService;
-    
+
     @Configuration
     @Import({ProcessExtensionsAutoConfiguration.class, ProcessExtensionsConfiguratorAutoConfiguration.class})
     static class ContextConfiguration {
@@ -70,6 +68,11 @@ public class ProcessVariablesInitiatorIT {
         protected ObjectMapper objectMapper() {
             return OBJECT_MAPPER;
         }
+
+        @MockBean
+        protected RepositoryService repositoryService;
+
+
     }
 
     @Before
